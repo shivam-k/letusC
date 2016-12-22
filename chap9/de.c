@@ -4,27 +4,23 @@
 #include <stdlib.h>
 int main()
 {
-	int n, i;
+	int n, i, j, k;
 	scanf("%d", &n);
-	//char *f0 = "a";
-	//char *f1 = "b";
-	char *fa="a";
-	char *fb="b";
-	char *fn, *temp;
+	char fa[] = "a", fb[]="b", fn[20], temp[20];
 	for(i=2; i<=n; i++)
 	{
-		fn = strcat(fb, fa);
-		//if(i<n)
-		//{
-		printf("%s\n", fn);
-			temp = fb;
-			fn = fb;
-			fa = fb;
-		//}
-		//else
-		//	break;
+		strcpy(temp, fb); // copying fb in temp before concatenating fb and fa
+		strcat(fb,fa);
+		strcpy(fn,fb);
+		if(i<n)
+		{
+			strcpy(fa, temp);  // exchanging 
+			strcpy(fb, fn);
+		}
+		else
+			break;
 	}
-	printf("%s\n", fn);
-
+	printf("\n%s\n", fn);
+	printf("\n");
 	return 0;
 }
