@@ -9,7 +9,7 @@ int main(void)
 	scanf("%d", &n);
 	for(i=0; i<n; i++)
 	{
-		scanf("%s", str[i]);  // each name should star with big letter alphabet
+		scanf("%s", str[i]);  // each name should start with big letter alphabet only
 		arr[i] = str[i]; //copying all strings in array of pointers, so that assignment operator can be used
 	}
 	printf("\n");
