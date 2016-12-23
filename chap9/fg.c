@@ -6,23 +6,20 @@
 
 int main(void)
 {
-	char *str, *r="*";
-	char *vow = "aeiou";
+	char str[40], nstr[40];
 	scanf("%s", str);
-	int i, j, k;
-	i = 0;
-	while(vow[i]!='\0')
+	int i, j, k, size;
+	size = strlen(str);
+	printf("%d\n", size);
+	for(j=0;j<size;j++)
 	{
-		j = 0;
-		while(str[j]!='\0')
+		if(str[j]!='a' && str[j]!='e' && str[j]!='i' && str[j]!='o' && str[j]!='u')
 		{
-			if(str[j]==vow[i])
-				str[j] = r[0];
-			j++;
+			nstr[j] = str[j];
+			printf("%c", nstr[j]);
 		}
-		i++;
 	}
-	printf("%s\n", str);
+	printf("\n");
 
 	return 0;
 }
