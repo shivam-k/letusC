@@ -4,38 +4,45 @@
 int main(void)
 {
 	char *str[] = {
-		"We will teach you how to...",
+		"We will teach you how to",
 		"Move a mountain",
 		"Level a building",
 		"Erase the past",
 		"Make a million",
 		"..all through C!"
 	};
-	char str1[20], str2[20];
-	int i, n, j, k;
-	scanf("%s %s", str1, str2);
+	char str1[20], str2[20], temp[20][20], *cpy;
+	int i, n, j, k=0, m=0, len1, len2;
+	//scanf("%s %s",str1, str2);
+	//printf("%d\n", 
+	//len1 = strlen(str[0]);
+	//printf("len1 = %d", len1);
 	for(i=0; i<6; i++)
 	{
-		printf("%s\n", str[i]);
-		j = strcmp(str1[i], str1);
-		if(j==0)
+		m = 0;
+		for(j=0; str[i][j]!='\0'; j++)
 		{
-			k=0;
-			while(str[i][k]!='\0')
+			if(str[i][j]==' ' || str[i][j]=='.')
 			{
-				l = 0;
-				while(str1[l]='\0')
-				{
-					if(str[i][k]==str1[l])
-				}
+				temp[k][m] = '\0';
+				k++;
+				m=0;
+			}
+			else
+			{
+				temp[k][m] = str[i][j];
+				m++;
 			}
 		}
-		// while(str[i][j]!='\0')
-		// {
-		// 	printf("%c ", str[i][j]);
-		// 	j++;
-		// }
-		// printf("\n");
+		printf("m = %d\n", m);
+		temp[k][m] = '\0';
+		printf("\n*****\n");
+		for(int n=0; n<k; n++)
+		{
+			printf("%s\n", temp[n]);
+		}
+		k++;
 	}
+	printf("\n");
 	return 0;
 }
