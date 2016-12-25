@@ -30,6 +30,8 @@ int main(void)
  	}
  	if(count==0)
  		printf("No such occurrences\n");
+ 	else
+ 		printf("%d time/times such occurrences\n", count);
 
 	return 0;
 }
