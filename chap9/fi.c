@@ -1,4 +1,4 @@
-/*---- I can do it----*/
+/*---- I can do it ----*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
@@ -6,10 +6,10 @@
 
 int main(void)
 {
-	char name[240], nname[240];
+	char name[100], nname[100], temp[20];
 	// at least one gap is required between first and last name
 	// input = James Brolin,output = J.Brolin
-	int i, count=0, len, j, k, pass=0;
+	int i, count=0, len, j, k=0, code=0, pass=0;
 	while(1)
 	{
 		fgets(name, sizeof(name), stdin);
@@ -37,54 +37,41 @@ int main(void)
 	j=0;
 	for(i=0; i<len; i++)
 	{
-		printf("pass = %d\n", pass);
-		nname[0] = name[0];
-		//printf("%c", nname[0]);
-		if(count==1)
+		if(name[i]==' ')
+			code++;
+		if(code<=count && pass==0)
 		{
-			if(pass=1)
-			{
-				j++;
-				nname[j] = name[i];
-			}
 			if(name[i]==' ')
 			{
-				j++;
-				nname[j] = '.';
-				pass=1;
+				k++;
+				nname[k] = temp[0];
+				printf("%c", nname[k]);
+				k++;
+				nname[k] = '.';
+				printf("%c", nname[k]);
+				j = 0;
+				if(code==count)
+					pass=1;
+			}
+			else
+			{
+				if(name[i]!=' ')
+				{
+					temp[j] = name[i];
+					j++;
+				}
 			}
 		}
-		// else
-		// {
-		// 	if(j<=count)
-		// 	{
-		// 		if(name[i]==' ')
-		// 		{
-		// 			j++;
-		// 			nname[j] = '.';
-		// 			printf("%c", nname[j]);
-		// 			j++;
-		// 			nname[j] = name[i+1];
-		// 			printf("%c", nname[j]);
-		// 		}
-		// 	}
-		// 	else if(count+1==j)
-		// 	{
-		// 		j++;
-		// 		nname[j] = '.';
-		// 		printf("%c", nname[j]);
-		// 	}
-		// 	else
-		// 	{
-		// 		j++;
-		// 		nname[j] = name[i];
-		// 		printf("%c", nname[j]);
-		// 	}
-		// }
+		else if(code==count && pass==1)
+		{
+			k++;
+			nname[k] = name[i];
+			printf("%c", nname[k]);
+		}
 	}
-	//nname[j+1] = '\0';
+	//nname[k+1] = '\0';
 	printf("\n");
-	printf("%s", nname);
+	printf("%s\n", nname);
 
 	return 0;
 }
