@@ -16,6 +16,11 @@ int main(void)
 	int i, n, j, k=0, m=0, len1=strlen(str1), len2=strlen(str2), pass=0, row[10], col[10], r=0, c=0, tar;
 	for(i=0; i<6; i++)
 	{
+		printf("%s\n", str[i]);
+	}
+
+	for(i=0; i<6; i++)
+	{
 		j=0;
 		while(str[i][j]!='\0')
 		{
