@@ -1,46 +1,51 @@
+/*---- I can do it ----*/
 #include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
 #include <string.h>
-
-struct student
+#include <limits.h>
+struct students
 {
 	int roll;
 	char name[20];
 	char dep[20];
-	char course[20];
+	char cors[20];
 	int yoj;
 };
-void sdata(struct student);
-void getnames(struct student *);
-
+void pyear(struct students *, int);
 int main(void)
 {
-	int i, n;
+	struct students s[450];
+	int n, i;
 	scanf("%d", &n);
-	struct student s[250];
 	for(i=0; i<n; i++)
 	{
-		scanf("%d %c %c %c %d", &s[i].roll, &s[i].name, &s[i].dep, &s[i].course, &s[i].yoj);
+		scanf("%d", &s[i].roll);
+		scanf("%s", s[i].name);
+		scanf("%s", s[i].dep);
+		scanf("%s", s[i].cors);
+		scanf("%d", &s[i].yoj);
 	}
 	for(i=0; i<n; i++)
 	{
-		printf("%d %c %c %c %d\n", s[i].roll, s[i].name, s[i].dep, s[i].course, s[i].yoj);
-		i++;
+		printf("%d\n", s[i].roll);
+		printf("%s\n", s[i].name);
+		printf("%s\n", s[i].dep);
+		printf("%s\n", s[i].cors);
+		printf("%d\n", s[i].yoj);	
 	}
-	//sdata(s);
-	//getnames(s); 
+	pyear(&s[0], n);
 
 	return 0;
 }
-// void sdata(struct student s)
-// {	int i=0;
-// 	while(s[i]!='\0')
-// 	{
-// 		printf("%d %c %c %c %d\n", s[i].roll, s[i].name, s[i].dep, s[i].course, s[i].yoj);
-// 		i++;
-// 	}
-// }
 
-// void getnames(struct student *b)
-// {
-// 	scanf("")
-// }
+void pyear(struct students *p, int n)
+{
+	int pyr, i;
+	scanf("%d", &pyr);
+	for(i=0; i<2; i++)
+	{
+		if(p[i]->yoj==pyr)
+			printf("%s\n", p[i]->name);
+	}
+}
