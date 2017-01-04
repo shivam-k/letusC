@@ -22,7 +22,7 @@ int main(void)
 {
 	struct students s[450];
 	int n, i;
-	scanf("%d", &n);
+	scanf("%d", &n);// number of students
 	for(i=0; i<n; i++)
 	{
 		scanf("%d", &s[i].roll);
