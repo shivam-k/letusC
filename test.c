@@ -1,13 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-<<<<<<< HEAD
 // commit on master branch...dodge 
-int main()
-=======
-// on New branch testing....and apepnding commit of branch hotfix..
 int main(void)
->>>>>>> hotfix
 {
     int t, n, i, j, pass=0, con, count1=0, count2=0, chk1, chk2, k=0, m=0, blarr[26], slarr[26], flow, len;
     char s[500];
