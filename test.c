@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-// on New branch testing....and apepnding commit of branch hotfix..
+// commit on master branch...dodge...commit on hotfix branch
 int main(void)
 {
     int t, n, i, j, pass=0, con, count1=0, count2=0, chk1, chk2, k=0, m=0, blarr[26], slarr[26], flow, len;
