@@ -4,6 +4,7 @@
 // commit on master branch...dodge...commit on hotfix branch
 int main(void)
 {
+	int sum=0;
     int t, n, i, j, pass=0, con, count1=0, count2=0, chk1, chk2, k=0, m=0, blarr[26], slarr[26], flow, len;
     char s[500];
     for(i=65; i<=90; i++)
